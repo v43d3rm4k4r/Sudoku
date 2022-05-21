@@ -11,6 +11,11 @@ set(CMAKE_AUTORCC ON)
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
+option(DEBUG "Enable debug output" ON)
+if(DEBUG)
+    add_definitions(-DDEBUG)
+endif()
+
 find_package(QT NAMES Qt5 REQUIRED COMPONENTS Widgets LinguistTools)
 find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Widgets LinguistTools)
 
@@ -21,6 +26,9 @@ set(PROJECT_SOURCES
         MainWindow.cpp
         MainWindow.h
         MainWindow.ui
+        FieldModel.h
+        FieldModel.cpp
+        Types.h
         ${TS_FILES}
 )
 
