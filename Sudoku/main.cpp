@@ -4,8 +4,12 @@
 #include <QLocale>
 #include <QTranslator>
 
+
+
 int main(int argc, char* argv[]) {
     QApplication app(argc, argv);
+    app.setApplicationVersion(SUDOKU_APP_VERSION);
+    app.setApplicationDisplayName(QStringLiteral("Sudoku v") + SUDOKU_APP_VERSION);
 
     // TODO: make mainStylesheet.css
 //    app.setStyleSheet("QLineEdit { background-color: yellow }");
@@ -13,9 +17,9 @@ int main(int argc, char* argv[]) {
                       "border: 2px solid gray;"
                       "border-radius: 10px;"
                       "padding: 0 8px;"
-                      "background: blue;"
+                      "background: mediumslateblue;"
                       "selection-background-color: darkgray;"
-                  "})");
+                  "}");
 
     QTranslator translator;
     const QStringList uiLanguages = QLocale::system().uiLanguages();

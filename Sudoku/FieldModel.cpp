@@ -3,6 +3,11 @@
 #   include <iostream>
 #endif
 
+#if defined (__linux__) && defined (__GNUC__)
+#define FUNC __PRETTY_FUNCTION__
+#elif defined _WIN32
+#define FUNC __func__
+#endif
 
 namespace Sudoku {
 
@@ -14,6 +19,7 @@ FieldModel::FieldModel(QObject* parent/*=nullptr*/) : QObject(parent) {
 void FieldModel::onCellChanged(const Cell &cell) {
     _field[cell.coord.x()][cell.coord.y()].value = cell.value;
 
+    debugShowField(FUNC);
     // TODO: add check if sudoku completed? or do it by button?
 }
 
@@ -50,7 +56,7 @@ void FieldModel::_init() {
     }
 
 #ifdef DEBUG
-    debugShowField(__func__);
+    debugShowField(FUNC);
 #endif
 }
 
@@ -58,7 +64,7 @@ void FieldModel::_shuffle() {
 
     // TODO: randomly call shuffle methods
 #ifdef DEBUG
-    debugShowField(__func__);
+    debugShowField(FUNC);
 #endif
 }
 
@@ -66,7 +72,7 @@ void FieldModel::_transpose() {
 
 
 #ifdef DEBUG
-    debugShowField(__func__);
+    debugShowField(FUNC);
 #endif
 }
 
@@ -74,7 +80,7 @@ void FieldModel::_swapRowsSmall() {
 
 
 #ifdef DEBUG
-    debugShowField(__func__);
+    debugShowField(FUNC);
 #endif
 }
 
@@ -82,7 +88,7 @@ void FieldModel::_swapColumnsSmall() {
 
 
 #ifdef DEBUG
-    debugShowField(__func__);
+    debugShowField(FUNC);
 #endif
 }
 

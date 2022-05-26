@@ -11,6 +11,12 @@ set(CMAKE_AUTORCC ON)
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
+
+if (NOT DEFINED SUDOKU_APP_VERSION)
+    message(FATAL_ERROR "SUDOKU_APP_VERSION is not defined")
+endif ()
+add_definitions(-DSUDOKU_APP_VERSION="${SUDOKU_APP_VERSION}")
+
 option(DEBUG "Enable debug output" ON)
 if(DEBUG)
     add_definitions(-DDEBUG)

@@ -14,6 +14,9 @@ public:
 public slots:
     void onCellChanged(const Sudoku::Cell& cell);
 
+signals:
+    void sudokuCompleted();
+
 private:
     void _init();
     void _shuffle();
