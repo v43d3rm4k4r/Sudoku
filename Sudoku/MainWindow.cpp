@@ -1,5 +1,6 @@
 #include <MainWindow.h>
 #include <QRandomGenerator>
+#include <QMessageBox>
 
 /// Line edit cells & grids naming:
 /// "lineEdit21", where first number is for X, second is for Y
@@ -22,23 +23,32 @@ MainWindow::MainWindow(QWidget* parent) : QMainWindow(parent) {
         }
     }
     connect(this, &Sudoku::MainWindow::cellChanged, _fieldModel.get(), &Sudoku::FieldModel::onCellChanged);
+    connect(this, &Sudoku::MainWindow::cellsHidden, _fieldModel.get(),  &Sudoku::FieldModel::onCellsHidden);
+    connect(_fieldModel.get(), &Sudoku::FieldModel::sudokuCompleted, this, &Sudoku::MainWindow::onSudokuCompleted);
 
     _displayField();
     _hideCells();
+    _setTabulation();
 }
 
 void MainWindow::onCellChanged(const QString& text) {
     auto sender = qobject_cast<QLineEdit*>(this->sender());
     auto coords = sender->objectName().mid(8, 2);
     if (text.isEmpty()) {
-        emit cellChanged(Cell{{QString(coords[0]).toInt(), QString(coords[1]).toInt()}, 0});
+        emit cellChanged({{QString(coords[0]).toInt(), QString(coords[1]).toInt()}, 0});
         return;
     }
     if (!text.toInt()) {
         sender->clear();
         return;
     }
-    emit cellChanged(Cell{{QString(coords[0]).toInt(), QString(coords[1]).toInt()}, static_cast<quint8>(text.toInt())});
+    emit cellChanged({{QString(coords[0]).toInt(), QString(coords[1]).toInt()}, static_cast<quint8>(text.toInt())});
+}
+
+void MainWindow::onSudokuCompleted() {
+    QMessageBox msgBox;
+    msgBox.setText(tr("Sudoku completed successfully!"));
+    msgBox.exec();
 }
 
 void MainWindow::_displayField() {
@@ -173,6 +183,11 @@ void MainWindow::_hideCells() {
             }
         }
     }
+    emit cellsHidden();
+}
+
+void MainWindow::_setTabulation() {
+    // TODO
 }
 
 // TODO: add value validation. Only if value is valid, then emit cellChanged()

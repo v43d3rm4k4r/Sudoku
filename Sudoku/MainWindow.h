@@ -18,21 +18,21 @@ public:
     explicit MainWindow(QWidget* parent = nullptr);
     ~MainWindow() = default;
 
-    static constexpr quint8 kLayoutsInLine = 3;
-    static constexpr quint8 kCellsInLine   = 9;
-
 signals:
     void cellChanged(const Sudoku::Cell& cell);
+    void cellsHidden();
 
 private slots:
     void onCellChanged(const QString& text);
+    void onSudokuCompleted();
 
 private:
     void _displayField();
     Cells_t _getCells();
     QGridLayout* _getLayoutAtPosition(quint8 row, quint8 col);
     QLineEdit*   _getCellAtPosition(quint8 row, quint8 col);
-    void _hideCells(); // TODO: make it more complicated
+    void _hideCells(); // TODO: make it more complicate
+    void _setTabulation();
 
 private:
     std::unique_ptr<Ui::MainWindow> ui;

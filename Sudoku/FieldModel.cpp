@@ -20,7 +20,15 @@ void FieldModel::onCellChanged(const Cell &cell) {
     _field[cell.coord.x()][cell.coord.y()].value = cell.value;
 
     debugShowField(FUNC);
-    // TODO: add check if sudoku completed? or do it by button?
+
+    if (_initialized && _isSudokuCompleted()) {
+        debugMessage("Sudoku completed!");
+        emit sudokuCompleted();
+    }
+}
+
+void FieldModel::onCellsHidden() {
+    _initialized = true;
 }
 
 void FieldModel::_init() {
@@ -92,6 +100,30 @@ void FieldModel::_swapColumnsSmall() {
 #endif
 }
 
+bool FieldModel::_isSudokuCompleted() {
+    quint8 sum = 0;
+    for (quint8 row = 0; row < kCellsInLine; ++row) {
+        for (quint8 col = 0; col < kCellsInLine; ++col) {
+            sum += _field[row][col].value;
+        }
+        if (sum != kCellsSumInLine) {
+            return false;
+        }
+        sum = 0;
+    }
+    sum = 0;
+    for (quint8 col = 0; col < kCellsInLine; ++col) {
+        for (quint8 row = 0; row < kCellsInLine; ++row) {
+            sum += _field[row][col].value;
+        }
+        if (sum != kCellsSumInLine) {
+            return false;
+        }
+        sum = 0;
+    }
+    return true;
+}
+
 #ifdef DEBUG
 void FieldModel::debugShowField(const QString& functionName) {
     std::cout << "Field after " << functionName.toStdString() << ':' << std::endl;
@@ -111,6 +143,10 @@ void FieldModel::debugShowField(const QString& functionName) {
         }
     }
     std::cout << std::endl;
+}
+
+void FieldModel::debugMessage(const QString &message) {
+    std::cout << message.toStdString() << std::endl;
 }
 #endif
 

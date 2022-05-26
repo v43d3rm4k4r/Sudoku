@@ -13,6 +13,7 @@ public:
 
 public slots:
     void onCellChanged(const Sudoku::Cell& cell);
+    void onCellsHidden();
 
 signals:
     void sudokuCompleted();
@@ -27,12 +28,16 @@ private:
     void _swapRowsArea();
     void _swapColumnsArea();
 
+    bool _isSudokuCompleted();
+
 #ifdef DEBUG
     void debugShowField(const QString& functionName);
+    void debugMessage(const QString& message);
 #endif
 
 private:
     Field_t _field; // QVector2D?
+    bool _initialized = false;
 };
 
 } // namespace Sudoku
