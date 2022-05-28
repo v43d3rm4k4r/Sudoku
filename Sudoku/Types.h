@@ -6,9 +6,9 @@
 
 namespace Sudoku {
 
-static constexpr quint8 kLayoutsInLine  = 3;
-static constexpr quint8 kCellsInLine    = 9;
-static constexpr quint8 kCellsSumInLine = 45;
+static constexpr quint8 kLayoutsInLine  = 3U;
+static constexpr quint8 kCellsInLine    = 9U;
+static constexpr quint8 kCellsSumInLine = 45U;
 
 struct Cell {
     QPoint coord;

@@ -36,17 +36,6 @@ void FieldModel::_init() {
     for (auto& col : _field)
         col.resize(9);
 
-//    // Compile time - our everything :)
-//    _field = {{1,2,3,4,5,6,7,8,9},
-//              {4,5,6,7,8,9,1,2,3},
-//              {7,8,9,1,2,3,4,5,6},
-//              {2,3,4,5,6,7,8,9,1},
-//              {5,6,7,8,9,1,2,3,4},
-//              {8,9,1,2,3,4,5,6,7},
-//              {3,4,5,6,7,8,9,1,2},
-//              {6,7,8,9,1,2,3,4,5},
-//              {9,1,2,3,4,5,6,7,8}};
-
     quint8 globalGridNum = 1;
     for (quint8 colStart = 0; colStart < 9; colStart += 3) { // global 3x3
         for (quint8 rowStart = 0; rowStart < 9; rowStart += 3) {
@@ -69,6 +58,7 @@ void FieldModel::_init() {
 }
 
 void FieldModel::_shuffle() {
+    _transpose();
 
     // TODO: randomly call shuffle methods
 #ifdef DEBUG
@@ -77,7 +67,17 @@ void FieldModel::_shuffle() {
 }
 
 void FieldModel::_transpose() {
+    Field_t transposed;
+    transposed.resize(9);
+    for (auto& col : transposed)
+        col.resize(9);
 
+    for (quint8 col = 0; col < kCellsInLine; ++col) {
+        for (quint8 row = 0; row < kCellsInLine; ++row) {
+            transposed[col][row] = _field[row][col];
+        }
+    }
+    _field = transposed;
 
 #ifdef DEBUG
     debugShowField(FUNC);
@@ -85,7 +85,12 @@ void FieldModel::_transpose() {
 }
 
 void FieldModel::_swapRowsSmall() {
+    Field_t transposed;
+    transposed.resize(9);
+    for (auto& col : transposed)
+        col.resize(9);
 
+    // TODO
 
 #ifdef DEBUG
     debugShowField(FUNC);

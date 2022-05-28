@@ -22,8 +22,8 @@ MainWindow::MainWindow(QWidget* parent) : QMainWindow(parent) {
             connect(_getCellAtPosition(row, col), &QLineEdit::textChanged, this, &Sudoku::MainWindow::onCellChanged);
         }
     }
-    connect(this, &Sudoku::MainWindow::cellChanged, _fieldModel.get(), &Sudoku::FieldModel::onCellChanged);
-    connect(this, &Sudoku::MainWindow::cellsHidden, _fieldModel.get(),  &Sudoku::FieldModel::onCellsHidden);
+    connect(this, &Sudoku::MainWindow::cellChanged, _fieldModel.get(),     &Sudoku::FieldModel::onCellChanged);
+    connect(this, &Sudoku::MainWindow::cellsHidden, _fieldModel.get(),     &Sudoku::FieldModel::onCellsHidden);
     connect(_fieldModel.get(), &Sudoku::FieldModel::sudokuCompleted, this, &Sudoku::MainWindow::onSudokuCompleted);
 
     _displayField();
@@ -49,6 +49,8 @@ void MainWindow::onSudokuCompleted() {
     QMessageBox msgBox;
     msgBox.setText(tr("Sudoku completed successfully!"));
     msgBox.exec();
+
+    // TODO: renew game
 }
 
 void MainWindow::_displayField() {
@@ -65,34 +67,11 @@ Cells_t MainWindow::_getCells() {
     for (auto& col : cells)
         col.resize(9);
 
-//    quint8 rowCell = 0, colCell = 0;
-//    for (quint8 outerGridRow = 0; outerGridRow != 6; outerGridRow += 2) {
-//        for (quint8 outerGridCol = 0; outerGridCol != 6; outerGridCol += 2) {
-//            auto layout = qobject_cast<QGridLayout*>(ui->gridLayoutCentral->itemAtPosition(outerGridRow, outerGridCol)->layout());
-//            if (layout) {
-
-
-//                for (quint8 innerGridRow = rowCell; innerGridRow < rowCell+3; ++innerGridRow) {     // 0->3->6 в счётчике, 3->6->9 в условии
-//                    for (quint8 innerGridCol = colCell; innerGridCol < colCell+3; ++innerGridCol) { // 0->3->6 в счётчике, 3->6->9 в условии
-//                        auto widget = layout->itemAtPosition(innerGridRow, innerGridCol);
-//                        if (widget) {
-//                            cells[innerGridRow][innerGridCol] = widget;
-//                        }
-//                    }
-//                    colCell += 3;
-//                }
-//                // обнулить новые переменные
-//                rowCell += 3;
-//            }
-//        }
-//    }
-
     for (quint8 row = 0; row < 9; ++row) {
         for (quint8 col = 0; col < 9; ++col) {
             cells[row][col] = _getCellAtPosition(row, col);
         }
     }
-
     return cells;
 }
 
@@ -102,37 +81,7 @@ QGridLayout* MainWindow::_getLayoutAtPosition(quint8 row, quint8 col) {
 }
 
 QLineEdit* MainWindow::_getCellAtPosition(quint8 row, quint8 col) {
-    QLineEdit*   cell   = nullptr;
-//    QGridLayout* layout = nullptr;
-
-//    if (row <= 2 && col <= 2) {
-//        layout = _getLayoutAtPosition(0, 0);
-//    }
-//    if (row <= 2 && col >= 3 && col <= 5) {
-//        layout = _getLayoutAtPosition(0, 1);
-//    }
-//    if (row <= 2 && col >= 6 && col <= 8) {
-//        layout = _getLayoutAtPosition(0, 2);
-//    }
-//    if (col <= 2 && row >= 3 && row <= 5) {
-//        layout = _getLayoutAtPosition(1, 0);
-//    }
-//    if (col <= 2 && row >= 6 && row <= 8) {
-//        layout = _getLayoutAtPosition(2, 0);
-//    }
-//    if (row >= 3 && col >= 3 && row <= 5 && col <= 5) {
-//        layout = _getLayoutAtPosition(1, 1);
-//    }
-//    if (col >= 6 && row >= 3 && row <= 5) {
-//        layout = _getLayoutAtPosition(1, 2);
-//    }
-//    if (row >= 6 && col >= 3 && col <= 5) {
-//        layout = _getLayoutAtPosition(2, 1);
-//    }
-//    if (row >= 6 && col >= 6) {
-//        layout = _getLayoutAtPosition(2, 2);
-//    }
-
+    QLineEdit* cell = nullptr;
     cell = ui->centralwidget->findChild<QLineEdit*>("lineEdit" + QString::number(row) + QString::number(col));
     return cell;
 }
@@ -187,7 +136,23 @@ void MainWindow::_hideCells() {
 }
 
 void MainWindow::_setTabulation() {
-    // TODO
+    bool isFirst = true;
+    QLineEdit* oldWidget   = nullptr;
+    for (quint8 row = 0; row < kCellsInLine; ++row) {
+        for (quint8 col = 0; col < kCellsInLine; ++col) {
+            auto widget = _getCellAtPosition(row, col);
+            if (widget->text().isEmpty()) {
+                if (!isFirst) {
+                    setTabOrder(oldWidget, widget);
+                }
+                oldWidget = widget;
+                if (isFirst) {
+                    widget->setFocus();
+                    isFirst = false;
+                }
+            }
+        }
+    }
 }
 
 // TODO: add value validation. Only if value is valid, then emit cellChanged()
