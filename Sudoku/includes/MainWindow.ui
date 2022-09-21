@@ -25,6 +25,10 @@
   <property name="windowTitle">
    <string/>
   </property>
+  <property name="windowIcon">
+   <iconset resource="../resources/resources.qrc">
+    <normaloff>:/icons/window_icon@256.ico</normaloff>:/icons/window_icon@256.ico</iconset>
+  </property>
   <property name="autoFillBackground">
    <bool>false</bool>
   </property>
@@ -41,8 +45,8 @@
          <widget class="QLineEdit" name="lineEdit30">
           <property name="maximumSize">
            <size>
-            <width>50</width>
-            <height>50</height>
+            <width>100</width>
+            <height>100</height>
            </size>
           </property>
           <property name="font">
@@ -62,8 +66,8 @@
          <widget class="QLineEdit" name="lineEdit52">
           <property name="maximumSize">
            <size>
-            <width>50</width>
-            <height>50</height>
+            <width>100</width>
+            <height>100</height>
            </size>
           </property>
           <property name="font">
@@ -83,8 +87,8 @@
          <widget class="QLineEdit" name="lineEdit42">
           <property name="maximumSize">
            <size>
-            <width>50</width>
-            <height>50</height>
+            <width>100</width>
+            <height>100</height>
            </size>
           </property>
           <property name="font">
@@ -104,8 +108,8 @@
          <widget class="QLineEdit" name="lineEdit31">
           <property name="maximumSize">
            <size>
-            <width>50</width>
-            <height>50</height>
+            <width>100</width>
+            <height>100</height>
            </size>
           </property>
           <property name="font">
@@ -125,8 +129,8 @@
          <widget class="QLineEdit" name="lineEdit40">
           <property name="maximumSize">
            <size>
-            <width>50</width>
-            <height>50</height>
+            <width>100</width>
+            <height>100</height>
            </size>
           </property>
           <property name="font">
@@ -146,8 +150,8 @@
          <widget class="QLineEdit" name="lineEdit51">
           <property name="maximumSize">
            <size>
-            <width>50</width>
-            <height>50</height>
+            <width>100</width>
+            <height>100</height>
            </size>
           </property>
           <property name="font">
@@ -167,8 +171,8 @@
          <widget class="QLineEdit" name="lineEdit41">
           <property name="maximumSize">
            <size>
-            <width>50</width>
-            <height>50</height>
+            <width>100</width>
+            <height>100</height>
            </size>
           </property>
           <property name="font">
@@ -188,8 +192,8 @@
          <widget class="QLineEdit" name="lineEdit32">
           <property name="maximumSize">
            <size>
-            <width>50</width>
-            <height>50</height>
+            <width>100</width>
+            <height>100</height>
            </size>
           </property>
           <property name="font">
@@ -209,8 +213,8 @@
          <widget class="QLineEdit" name="lineEdit50">
           <property name="maximumSize">
            <size>
-            <width>50</width>
-            <height>50</height>
+            <width>100</width>
+            <height>100</height>
            </size>
           </property>
           <property name="font">
@@ -253,8 +257,8 @@
          <widget class="QLineEdit" name="lineEdit71">
           <property name="maximumSize">
            <size>
-            <width>50</width>
-            <height>50</height>
+            <width>100</width>
+            <height>100</height>
            </size>
           </property>
           <property name="font">
@@ -274,8 +278,8 @@
          <widget class="QLineEdit" name="lineEdit72">
           <property name="maximumSize">
            <size>
-            <width>50</width>
-            <height>50</height>
+            <width>100</width>
+            <height>100</height>
            </size>
           </property>
           <property name="font">
@@ -295,8 +299,8 @@
          <widget class="QLineEdit" name="lineEdit60">
           <property name="maximumSize">
            <size>
-            <width>50</width>
-            <height>50</height>
+            <width>100</width>
+            <height>100</height>
            </size>
           </property>
           <property name="font">
@@ -316,8 +320,8 @@
          <widget class="QLineEdit" name="lineEdit61">
           <property name="maximumSize">
            <size>
-            <width>50</width>
-            <height>50</height>
+            <width>100</width>
+            <height>100</height>
            </size>
           </property>
           <property name="font">
@@ -337,8 +341,8 @@
          <widget class="QLineEdit" name="lineEdit62">
           <property name="maximumSize">
            <size>
-            <width>50</width>
-            <height>50</height>
+            <width>100</width>
+            <height>100</height>
            </size>
           </property>
           <property name="font">
@@ -358,8 +362,8 @@
          <widget class="QLineEdit" name="lineEdit70">
           <property name="maximumSize">
            <size>
-            <width>50</width>
-            <height>50</height>
+            <width>100</width>
+            <height>100</height>
            </size>
           </property>
           <property name="font">
@@ -379,8 +383,8 @@
          <widget class="QLineEdit" name="lineEdit80">
           <property name="maximumSize">
            <size>
-            <width>50</width>
-            <height>50</height>
+            <width>100</width>
+            <height>100</height>
            </size>
           </property>
           <property name="font">
@@ -400,8 +404,8 @@
          <widget class="QLineEdit" name="lineEdit81">
           <property name="maximumSize">
            <size>
-            <width>50</width>
-            <height>50</height>
+            <width>100</width>
+            <height>100</height>
            </size>
           </property>
           <property name="font">
@@ -421,8 +425,8 @@
          <widget class="QLineEdit" name="lineEdit82">
           <property name="maximumSize">
            <size>
-            <width>50</width>
-            <height>50</height>
+            <width>100</width>
+            <height>100</height>
            </size>
           </property>
           <property name="font">
@@ -446,8 +450,8 @@
          <widget class="QLineEdit" name="lineEdit78">
           <property name="maximumSize">
            <size>
-            <width>50</width>
-            <height>50</height>
+            <width>100</width>
+            <height>100</height>
            </size>
           </property>
           <property name="font">
@@ -467,8 +471,8 @@
          <widget class="QLineEdit" name="lineEdit66">
           <property name="maximumSize">
            <size>
-            <width>50</width>
-            <height>50</height>
+            <width>100</width>
+            <height>100</height>
            </size>
           </property>
           <property name="font">
@@ -488,8 +492,8 @@
          <widget class="QLineEdit" name="lineEdit77">
           <property name="maximumSize">
            <size>
-            <width>50</width>
-            <height>50</height>
+            <width>100</width>
+            <height>100</height>
            </size>
           </property>
           <property name="font">
@@ -509,8 +513,8 @@
          <widget class="QLineEdit" name="lineEdit68">
           <property name="maximumSize">
            <size>
-            <width>50</width>
-            <height>50</height>
+            <width>100</width>
+            <height>100</height>
            </size>
           </property>
           <property name="font">
@@ -530,8 +534,8 @@
          <widget class="QLineEdit" name="lineEdit67">
           <property name="maximumSize">
            <size>
-            <width>50</width>
-            <height>50</height>
+            <width>100</width>
+            <height>100</height>
            </size>
           </property>
           <property name="font">
@@ -551,8 +555,8 @@
          <widget class="QLineEdit" name="lineEdit76">
           <property name="maximumSize">
            <size>
-            <width>50</width>
-            <height>50</height>
+            <width>100</width>
+            <height>100</height>
            </size>
           </property>
           <property name="font">
@@ -572,8 +576,8 @@
          <widget class="QLineEdit" name="lineEdit87">
           <property name="maximumSize">
            <size>
-            <width>50</width>
-            <height>50</height>
+            <width>100</width>
+            <height>100</height>
            </size>
           </property>
           <property name="font">
@@ -593,8 +597,8 @@
          <widget class="QLineEdit" name="lineEdit88">
           <property name="maximumSize">
            <size>
-            <width>50</width>
-            <height>50</height>
+            <width>100</width>
+            <height>100</height>
            </size>
           </property>
           <property name="font">
@@ -614,8 +618,8 @@
          <widget class="QLineEdit" name="lineEdit86">
           <property name="maximumSize">
            <size>
-            <width>50</width>
-            <height>50</height>
+            <width>100</width>
+            <height>100</height>
            </size>
           </property>
           <property name="font">
@@ -658,8 +662,8 @@
          <widget class="QLineEdit" name="lineEdit06">
           <property name="maximumSize">
            <size>
-            <width>50</width>
-            <height>50</height>
+            <width>100</width>
+            <height>100</height>
            </size>
           </property>
           <property name="font">
@@ -679,8 +683,8 @@
          <widget class="QLineEdit" name="lineEdit16">
           <property name="maximumSize">
            <size>
-            <width>50</width>
-            <height>50</height>
+            <width>100</width>
+            <height>100</height>
            </size>
           </property>
           <property name="font">
@@ -700,8 +704,8 @@
          <widget class="QLineEdit" name="lineEdit08">
           <property name="maximumSize">
            <size>
-            <width>50</width>
-            <height>50</height>
+            <width>100</width>
+            <height>100</height>
            </size>
           </property>
           <property name="font">
@@ -721,8 +725,8 @@
          <widget class="QLineEdit" name="lineEdit18">
           <property name="maximumSize">
            <size>
-            <width>50</width>
-            <height>50</height>
+            <width>100</width>
+            <height>100</height>
            </size>
           </property>
           <property name="font">
@@ -742,8 +746,8 @@
          <widget class="QLineEdit" name="lineEdit07">
           <property name="maximumSize">
            <size>
-            <width>50</width>
-            <height>50</height>
+            <width>100</width>
+            <height>100</height>
            </size>
           </property>
           <property name="font">
@@ -763,8 +767,8 @@
          <widget class="QLineEdit" name="lineEdit17">
           <property name="maximumSize">
            <size>
-            <width>50</width>
-            <height>50</height>
+            <width>100</width>
+            <height>100</height>
            </size>
           </property>
           <property name="font">
@@ -784,8 +788,8 @@
          <widget class="QLineEdit" name="lineEdit26">
           <property name="maximumSize">
            <size>
-            <width>50</width>
-            <height>50</height>
+            <width>100</width>
+            <height>100</height>
            </size>
           </property>
           <property name="font">
@@ -805,8 +809,8 @@
          <widget class="QLineEdit" name="lineEdit27">
           <property name="maximumSize">
            <size>
-            <width>50</width>
-            <height>50</height>
+            <width>100</width>
+            <height>100</height>
            </size>
           </property>
           <property name="font">
@@ -826,8 +830,8 @@
          <widget class="QLineEdit" name="lineEdit28">
           <property name="maximumSize">
            <size>
-            <width>50</width>
-            <height>50</height>
+            <width>100</width>
+            <height>100</height>
            </size>
           </property>
           <property name="font">
@@ -870,8 +874,8 @@
          <widget class="QLineEdit" name="lineEdit38">
           <property name="maximumSize">
            <size>
-            <width>50</width>
-            <height>50</height>
+            <width>100</width>
+            <height>100</height>
            </size>
           </property>
           <property name="font">
@@ -891,8 +895,8 @@
          <widget class="QLineEdit" name="lineEdit48">
           <property name="maximumSize">
            <size>
-            <width>50</width>
-            <height>50</height>
+            <width>100</width>
+            <height>100</height>
            </size>
           </property>
           <property name="font">
@@ -912,8 +916,8 @@
          <widget class="QLineEdit" name="lineEdit37">
           <property name="maximumSize">
            <size>
-            <width>50</width>
-            <height>50</height>
+            <width>100</width>
+            <height>100</height>
            </size>
           </property>
           <property name="font">
@@ -933,8 +937,8 @@
          <widget class="QLineEdit" name="lineEdit46">
           <property name="maximumSize">
            <size>
-            <width>50</width>
-            <height>50</height>
+            <width>100</width>
+            <height>100</height>
            </size>
           </property>
           <property name="font">
@@ -954,8 +958,8 @@
          <widget class="QLineEdit" name="lineEdit36">
           <property name="maximumSize">
            <size>
-            <width>50</width>
-            <height>50</height>
+            <width>100</width>
+            <height>100</height>
            </size>
           </property>
           <property name="font">
@@ -975,8 +979,8 @@
          <widget class="QLineEdit" name="lineEdit47">
           <property name="maximumSize">
            <size>
-            <width>50</width>
-            <height>50</height>
+            <width>100</width>
+            <height>100</height>
            </size>
           </property>
           <property name="font">
@@ -996,8 +1000,8 @@
          <widget class="QLineEdit" name="lineEdit58">
           <property name="maximumSize">
            <size>
-            <width>50</width>
-            <height>50</height>
+            <width>100</width>
+            <height>100</height>
            </size>
           </property>
           <property name="font">
@@ -1017,8 +1021,8 @@
          <widget class="QLineEdit" name="lineEdit57">
           <property name="maximumSize">
            <size>
-            <width>50</width>
-            <height>50</height>
+            <width>100</width>
+            <height>100</height>
            </size>
           </property>
           <property name="font">
@@ -1038,8 +1042,8 @@
          <widget class="QLineEdit" name="lineEdit56">
           <property name="maximumSize">
            <size>
-            <width>50</width>
-            <height>50</height>
+            <width>100</width>
+            <height>100</height>
            </size>
           </property>
           <property name="font">
@@ -1082,8 +1086,8 @@
          <widget class="QLineEdit" name="lineEdit04">
           <property name="maximumSize">
            <size>
-            <width>50</width>
-            <height>50</height>
+            <width>100</width>
+            <height>100</height>
            </size>
           </property>
           <property name="font">
@@ -1103,8 +1107,8 @@
          <widget class="QLineEdit" name="lineEdit05">
           <property name="maximumSize">
            <size>
-            <width>50</width>
-            <height>50</height>
+            <width>100</width>
+            <height>100</height>
            </size>
           </property>
           <property name="font">
@@ -1124,8 +1128,8 @@
          <widget class="QLineEdit" name="lineEdit13">
           <property name="maximumSize">
            <size>
-            <width>50</width>
-            <height>50</height>
+            <width>100</width>
+            <height>100</height>
            </size>
           </property>
           <property name="font">
@@ -1145,8 +1149,8 @@
          <widget class="QLineEdit" name="lineEdit15">
           <property name="maximumSize">
            <size>
-            <width>50</width>
-            <height>50</height>
+            <width>100</width>
+            <height>100</height>
            </size>
           </property>
           <property name="font">
@@ -1166,8 +1170,8 @@
          <widget class="QLineEdit" name="lineEdit14">
           <property name="maximumSize">
            <size>
-            <width>50</width>
-            <height>50</height>
+            <width>100</width>
+            <height>100</height>
            </size>
           </property>
           <property name="font">
@@ -1187,8 +1191,8 @@
          <widget class="QLineEdit" name="lineEdit03">
           <property name="maximumSize">
            <size>
-            <width>50</width>
-            <height>50</height>
+            <width>100</width>
+            <height>100</height>
            </size>
           </property>
           <property name="font">
@@ -1208,8 +1212,8 @@
          <widget class="QLineEdit" name="lineEdit23">
           <property name="maximumSize">
            <size>
-            <width>50</width>
-            <height>50</height>
+            <width>100</width>
+            <height>100</height>
            </size>
           </property>
           <property name="font">
@@ -1229,8 +1233,8 @@
          <widget class="QLineEdit" name="lineEdit24">
           <property name="maximumSize">
            <size>
-            <width>50</width>
-            <height>50</height>
+            <width>100</width>
+            <height>100</height>
            </size>
           </property>
           <property name="font">
@@ -1250,8 +1254,8 @@
          <widget class="QLineEdit" name="lineEdit25">
           <property name="maximumSize">
            <size>
-            <width>50</width>
-            <height>50</height>
+            <width>100</width>
+            <height>100</height>
            </size>
           </property>
           <property name="font">
@@ -1351,8 +1355,8 @@
          <widget class="QLineEdit" name="lineEdit34">
           <property name="maximumSize">
            <size>
-            <width>50</width>
-            <height>50</height>
+            <width>100</width>
+            <height>100</height>
            </size>
           </property>
           <property name="font">
@@ -1372,8 +1376,8 @@
          <widget class="QLineEdit" name="lineEdit45">
           <property name="maximumSize">
            <size>
-            <width>50</width>
-            <height>50</height>
+            <width>100</width>
+            <height>100</height>
            </size>
           </property>
           <property name="font">
@@ -1393,8 +1397,8 @@
          <widget class="QLineEdit" name="lineEdit33">
           <property name="maximumSize">
            <size>
-            <width>50</width>
-            <height>50</height>
+            <width>100</width>
+            <height>100</height>
            </size>
           </property>
           <property name="font">
@@ -1414,8 +1418,8 @@
          <widget class="QLineEdit" name="lineEdit43">
           <property name="maximumSize">
            <size>
-            <width>50</width>
-            <height>50</height>
+            <width>100</width>
+            <height>100</height>
            </size>
           </property>
           <property name="font">
@@ -1435,8 +1439,8 @@
          <widget class="QLineEdit" name="lineEdit35">
           <property name="maximumSize">
            <size>
-            <width>50</width>
-            <height>50</height>
+            <width>100</width>
+            <height>100</height>
            </size>
           </property>
           <property name="font">
@@ -1456,8 +1460,8 @@
          <widget class="QLineEdit" name="lineEdit44">
           <property name="maximumSize">
            <size>
-            <width>50</width>
-            <height>50</height>
+            <width>100</width>
+            <height>100</height>
            </size>
           </property>
           <property name="font">
@@ -1477,8 +1481,8 @@
          <widget class="QLineEdit" name="lineEdit53">
           <property name="maximumSize">
            <size>
-            <width>50</width>
-            <height>50</height>
+            <width>100</width>
+            <height>100</height>
            </size>
           </property>
           <property name="font">
@@ -1498,8 +1502,8 @@
          <widget class="QLineEdit" name="lineEdit54">
           <property name="maximumSize">
            <size>
-            <width>50</width>
-            <height>50</height>
+            <width>100</width>
+            <height>100</height>
            </size>
           </property>
           <property name="font">
@@ -1519,8 +1523,8 @@
          <widget class="QLineEdit" name="lineEdit55">
           <property name="maximumSize">
            <size>
-            <width>50</width>
-            <height>50</height>
+            <width>100</width>
+            <height>100</height>
            </size>
           </property>
           <property name="font">
@@ -1544,8 +1548,8 @@
          <widget class="QLineEdit" name="lineEdit63">
           <property name="maximumSize">
            <size>
-            <width>50</width>
-            <height>50</height>
+            <width>100</width>
+            <height>100</height>
            </size>
           </property>
           <property name="font">
@@ -1565,8 +1569,8 @@
          <widget class="QLineEdit" name="lineEdit73">
           <property name="maximumSize">
            <size>
-            <width>50</width>
-            <height>50</height>
+            <width>100</width>
+            <height>100</height>
            </size>
           </property>
           <property name="font">
@@ -1586,8 +1590,8 @@
          <widget class="QLineEdit" name="lineEdit64">
           <property name="maximumSize">
            <size>
-            <width>50</width>
-            <height>50</height>
+            <width>100</width>
+            <height>100</height>
            </size>
           </property>
           <property name="font">
@@ -1607,8 +1611,8 @@
          <widget class="QLineEdit" name="lineEdit75">
           <property name="maximumSize">
            <size>
-            <width>50</width>
-            <height>50</height>
+            <width>100</width>
+            <height>100</height>
            </size>
           </property>
           <property name="font">
@@ -1628,8 +1632,8 @@
          <widget class="QLineEdit" name="lineEdit65">
           <property name="maximumSize">
            <size>
-            <width>50</width>
-            <height>50</height>
+            <width>100</width>
+            <height>100</height>
            </size>
           </property>
           <property name="font">
@@ -1649,8 +1653,8 @@
          <widget class="QLineEdit" name="lineEdit74">
           <property name="maximumSize">
            <size>
-            <width>50</width>
-            <height>50</height>
+            <width>100</width>
+            <height>100</height>
            </size>
           </property>
           <property name="font">
@@ -1670,8 +1674,8 @@
          <widget class="QLineEdit" name="lineEdit83">
           <property name="maximumSize">
            <size>
-            <width>50</width>
-            <height>50</height>
+            <width>100</width>
+            <height>100</height>
            </size>
           </property>
           <property name="font">
@@ -1691,8 +1695,8 @@
          <widget class="QLineEdit" name="lineEdit84">
           <property name="maximumSize">
            <size>
-            <width>50</width>
-            <height>50</height>
+            <width>100</width>
+            <height>100</height>
            </size>
           </property>
           <property name="font">
@@ -1712,8 +1716,8 @@
          <widget class="QLineEdit" name="lineEdit85">
           <property name="maximumSize">
            <size>
-            <width>50</width>
-            <height>50</height>
+            <width>100</width>
+            <height>100</height>
            </size>
           </property>
           <property name="font">
@@ -1809,12 +1813,27 @@
       </item>
       <item row="0" column="0">
        <layout class="QGridLayout" name="gridLayout00">
+        <property name="sizeConstraint">
+         <enum>QLayout::SetDefaultConstraint</enum>
+        </property>
         <item row="0" column="2">
          <widget class="QLineEdit" name="lineEdit02">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
           <property name="maximumSize">
            <size>
-            <width>50</width>
-            <height>50</height>
+            <width>100</width>
+            <height>100</height>
+           </size>
+          </property>
+          <property name="baseSize">
+           <size>
+            <width>0</width>
+            <height>0</height>
            </size>
           </property>
           <property name="font">
@@ -1832,10 +1851,22 @@
         </item>
         <item row="0" column="1">
          <widget class="QLineEdit" name="lineEdit01">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
           <property name="maximumSize">
            <size>
-            <width>50</width>
-            <height>50</height>
+            <width>100</width>
+            <height>100</height>
+           </size>
+          </property>
+          <property name="baseSize">
+           <size>
+            <width>0</width>
+            <height>0</height>
            </size>
           </property>
           <property name="font">
@@ -1853,10 +1884,22 @@
         </item>
         <item row="1" column="1">
          <widget class="QLineEdit" name="lineEdit11">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
           <property name="maximumSize">
            <size>
-            <width>50</width>
-            <height>50</height>
+            <width>100</width>
+            <height>100</height>
+           </size>
+          </property>
+          <property name="baseSize">
+           <size>
+            <width>0</width>
+            <height>0</height>
            </size>
           </property>
           <property name="font">
@@ -1874,10 +1917,22 @@
         </item>
         <item row="0" column="0">
          <widget class="QLineEdit" name="lineEdit00">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
           <property name="maximumSize">
            <size>
-            <width>50</width>
-            <height>50</height>
+            <width>100</width>
+            <height>100</height>
+           </size>
+          </property>
+          <property name="baseSize">
+           <size>
+            <width>0</width>
+            <height>0</height>
            </size>
           </property>
           <property name="font">
@@ -1898,10 +1953,22 @@
         </item>
         <item row="1" column="0">
          <widget class="QLineEdit" name="lineEdit10">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
           <property name="maximumSize">
            <size>
-            <width>50</width>
-            <height>50</height>
+            <width>100</width>
+            <height>100</height>
+           </size>
+          </property>
+          <property name="baseSize">
+           <size>
+            <width>0</width>
+            <height>0</height>
            </size>
           </property>
           <property name="font">
@@ -1919,10 +1986,22 @@
         </item>
         <item row="1" column="2">
          <widget class="QLineEdit" name="lineEdit12">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
           <property name="maximumSize">
            <size>
-            <width>50</width>
-            <height>50</height>
+            <width>100</width>
+            <height>100</height>
+           </size>
+          </property>
+          <property name="baseSize">
+           <size>
+            <width>0</width>
+            <height>0</height>
            </size>
           </property>
           <property name="font">
@@ -1940,10 +2019,22 @@
         </item>
         <item row="2" column="0">
          <widget class="QLineEdit" name="lineEdit20">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
           <property name="maximumSize">
            <size>
-            <width>50</width>
-            <height>50</height>
+            <width>100</width>
+            <height>100</height>
+           </size>
+          </property>
+          <property name="baseSize">
+           <size>
+            <width>0</width>
+            <height>0</height>
            </size>
           </property>
           <property name="font">
@@ -1961,10 +2052,22 @@
         </item>
         <item row="2" column="1">
          <widget class="QLineEdit" name="lineEdit21">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
           <property name="maximumSize">
            <size>
-            <width>50</width>
-            <height>50</height>
+            <width>100</width>
+            <height>100</height>
+           </size>
+          </property>
+          <property name="baseSize">
+           <size>
+            <width>0</width>
+            <height>0</height>
            </size>
           </property>
           <property name="font">
@@ -1982,10 +2085,22 @@
         </item>
         <item row="2" column="2">
          <widget class="QLineEdit" name="lineEdit22">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
           <property name="maximumSize">
            <size>
-            <width>50</width>
-            <height>50</height>
+            <width>100</width>
+            <height>100</height>
+           </size>
+          </property>
+          <property name="baseSize">
+           <size>
+            <width>0</width>
+            <height>0</height>
            </size>
           </property>
           <property name="font">
@@ -2019,6 +2134,8 @@
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
  </widget>
- <resources/>
+ <resources>
+  <include location="../resources/resources.qrc"/>
+ </resources>
  <connections/>
 </ui>

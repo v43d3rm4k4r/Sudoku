@@ -1,7 +1,7 @@
 #pragma once
 
 #include <QObject>
-#include <Types.h>
+#include "Types.h"
 
 namespace Sudoku {
 
@@ -23,21 +23,19 @@ private:
     void _shuffle();
 
     void _transpose();
-    void _swapRowsSmall();
-    void _swapColumnsSmall();
-    void _swapRowsArea();
-    void _swapColumnsArea();
+    void _swapRowsSmall();    // TODO: add another version
+    void _swapColumnsSmall(); // TODO: add another version
+    void _swapRowsArea();     // TODO: add another version
+    void _swapColumnsArea();  // TODO: add another version
 
     bool _isSudokuCompleted();
 
-#ifdef DEBUG
     void debugShowField(const QString& functionName);
     void debugMessage(const QString& message);
-#endif
 
 private:
-    Field_t _field; // QVector2D?
-    bool _initialized = false;
+    Field_t _field;
+    bool    _initialized = false;
 };
 
 } // namespace Sudoku

@@ -1,15 +1,18 @@
+#include "qmessagebox.h"
 #include <MainWindow.h>
 
 #include <QApplication>
 #include <QLocale>
 #include <QTranslator>
 
-
-
 int main(int argc, char* argv[]) {
+    //QT_REQUIRE_VERSION(argc, argv, "5.15.2")
     QApplication app(argc, argv);
-    app.setApplicationVersion(SUDOKU_APP_VERSION);
-    app.setApplicationDisplayName(QStringLiteral("Sudoku v") + SUDOKU_APP_VERSION);
+    app.setApplicationVersion(QString::number(SUDOKU_APP_VERSION));
+    app.setApplicationDisplayName(QObject::tr("Sudoku") + " v" + QString::number(SUDOKU_APP_VERSION));
+    //app.setWindowIcon(QIcon(":/icons/window_icon@256.ico"));
+    //app.setWindowIcon(QIcon(":/icons/window_icon@256.ico"));
+    app.setWindowIcon(QIcon(":/icons/window_icon@256.ico"));
 
     // TODO: make mainStylesheet.css
 //    app.setStyleSheet("QLineEdit { background-color: yellow }");
@@ -22,15 +25,15 @@ int main(int argc, char* argv[]) {
                   "}");
 
     QTranslator translator;
-    const QStringList uiLanguages = QLocale::system().uiLanguages();
+    const auto uiLanguages = QLocale::system().uiLanguages();
     for (const QString &locale : uiLanguages) {
-        const QString baseName = "Sudoku_" + QLocale(locale).name();
+        const auto baseName = "Sudoku_" + QLocale(locale).name();
         if (translator.load(":/i18n/" + baseName)) {
             app.installTranslator(&translator);
             break;
         }
     }
-    Sudoku::MainWindow w;
-    w.show();
+    Sudoku::MainWindow window;
+    window.show();
     return app.exec();
 }
