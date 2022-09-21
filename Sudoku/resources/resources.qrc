@@ -1,0 +1,6 @@
+<!DOCTYPE RCC><RCC version="1.0">
+<qresource>
+    <file alias="window_icon@256.ico">icons/window_icon@256.ico</file>
+    <file>icons/TicTacToeLabel.ico</file>
+</qresource>
+</RCC>

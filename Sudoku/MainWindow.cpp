@@ -1,20 +1,18 @@
 #include <MainWindow.h>
 #include <QRandomGenerator>
 #include <QMessageBox>
-
-/// Line edit cells & grids naming:
-/// "lineEdit21", where first number is for X, second is for Y
+#include <CellEventFilter.h>
 
 namespace Sudoku {
 
-static constexpr auto kEmptyCellStyleSheet = "color: white;";
+static constexpr auto kDefaultCellStyleSheet = "color: black;";
+static constexpr auto kEmptyCellStyleSheet   = "color: white;";
 
-MainWindow::MainWindow(QWidget* parent) : QMainWindow(parent) {
+MainWindow::MainWindow(QWidget* parent) : QMainWindow{parent} {
     ui = std::make_unique<Ui::MainWindow>();
     ui->setupUi(this);
 
     _fieldModel = std::make_unique<FieldModel>();
-    // TODO: first field init, via FieldModel instance init
     _cells = _getCells();
 
     for (quint8 row = 0; row < kCellsInLine; ++row) {
@@ -22,9 +20,14 @@ MainWindow::MainWindow(QWidget* parent) : QMainWindow(parent) {
             connect(_getCellAtPosition(row, col), &QLineEdit::textChanged, this, &Sudoku::MainWindow::onCellChanged);
         }
     }
-    connect(this, &Sudoku::MainWindow::cellChanged, _fieldModel.get(),     &Sudoku::FieldModel::onCellChanged);
-    connect(this, &Sudoku::MainWindow::cellsHidden, _fieldModel.get(),     &Sudoku::FieldModel::onCellsHidden);
+    connect(this, &Sudoku::MainWindow::cellChanged, _fieldModel.get(), &Sudoku::FieldModel::onCellChanged);
+    connect(this, &Sudoku::MainWindow::cellsHidden, _fieldModel.get(), &Sudoku::FieldModel::onCellsHidden);
     connect(_fieldModel.get(), &Sudoku::FieldModel::sudokuCompleted, this, &Sudoku::MainWindow::onSudokuCompleted);
+
+    setFixedSize(minimumWidth(), minimumHeight());
+
+    // TODO _initAnimations
+    _initAnimations();
 
     _displayField();
     _hideCells();
@@ -47,15 +50,28 @@ void MainWindow::onCellChanged(const QString& text) {
 
 void MainWindow::onSudokuCompleted() {
     QMessageBox msgBox;
+    msgBox.setIcon(QMessageBox::Information);
     msgBox.setText(tr("Sudoku completed successfully!"));
     msgBox.exec();
 
-    // TODO: renew game
+    _displayField();
+    _resetCellsState();
+    _hideCells();
+    _setTabulation();
+}
+
+void MainWindow::_initAnimations() {
+    for (quint8 row = 0; row < kCellsInLine; ++row) {
+        for (quint8 col = 0; col < kCellsInLine; ++col) {
+            auto widget = _getCellAtPosition(row, col);
+            widget->installEventFilter(new CellEventFilter(widget));
+        }
+    }
 }
 
 void MainWindow::_displayField() {
-    for (quint8 row = 0; row < 9; ++row) {
-        for (quint8 col = 0; col < 9; ++col) {
+    for (quint8 row = 0; row < kCellsInLine; ++row) {
+        for (quint8 col = 0; col < kCellsInLine; ++col) {
             _cells[row][col]->setText(QString::number(_fieldModel->field()[row][col].value));
         }
     }
@@ -63,12 +79,12 @@ void MainWindow::_displayField() {
 
 Cells_t MainWindow::_getCells() {
     Cells_t cells;
-    cells.resize(9);
+    cells.resize(kCellsInLine);
     for (auto& col : cells)
-        col.resize(9);
+        col.resize(kCellsInLine);
 
-    for (quint8 row = 0; row < 9; ++row) {
-        for (quint8 col = 0; col < 9; ++col) {
+    for (quint8 row = 0; row < kCellsInLine; ++row) {
+        for (quint8 col = 0; col < kCellsInLine; ++col) {
             cells[row][col] = _getCellAtPosition(row, col);
         }
     }
@@ -124,7 +140,35 @@ void MainWindow::_hideCells() {
         widget->setStyleSheet(kEmptyCellStyleSheet);
     }
 
-    // 3.Неспрятанные значения делаем read only
+    // 3.Убираем доп. ячейки если в каких то зонах убрана всего одна
+    for (quint8 row = 0; row < kLayoutsInLine; ++row) {
+        for (quint8 col = 0; col < kLayoutsInLine; ++col) {
+            auto layout = _getLayoutAtPosition(row, col);
+            auto emptyCellsCount = 0;
+            QList<QPoint> emptyCellsList;
+            for (quint8 cellRow = 0; cellRow < kLayoutsInLine; ++cellRow) {
+                for (quint8 cellCol = 0; cellCol < kLayoutsInLine; ++cellCol) {
+                    auto widget = qobject_cast<QLineEdit*>(layout->itemAtPosition(cellRow, cellCol)->widget());
+                    if (widget->text().isEmpty()) {
+                        ++emptyCellsCount;
+                        emptyCellsList.push_back({cellRow, cellCol});
+                    }
+                }
+            }
+            if (emptyCellsCount < 2) {
+                quint8 randRow = 0, randCol = 0;
+                do {
+                    randRow = QRandomGenerator::global()->bounded(0, kLayoutsInLine);
+                    randCol = QRandomGenerator::global()->bounded(0, kLayoutsInLine);
+                } while (emptyCellsList.contains({randRow, randCol}));
+                auto widget = qobject_cast<QLineEdit*>(layout->itemAtPosition(randRow, randCol)->widget());
+                widget->clear();
+                widget->setStyleSheet(kEmptyCellStyleSheet);
+            }
+        }
+    }
+
+    // 4.Неспрятанные значения делаем read only
     for (quint8 row = 0; row < kCellsInLine; ++row) {
         for (quint8 col = 0; col < kCellsInLine; ++col) {
             if (!_cells[row][col]->text().isEmpty()) {
@@ -155,7 +199,17 @@ void MainWindow::_setTabulation() {
     }
 }
 
-// TODO: add value validation. Only if value is valid, then emit cellChanged()
+void MainWindow::_resetCellsState() {
+    for (quint8 row = 0; row < kCellsInLine; ++row) {
+        for (quint8 col = 0; col < kCellsInLine; ++col) {
+            auto widget = _getCellAtPosition(row, col);
+            widget->setStyleSheet(kDefaultCellStyleSheet);
+            if (widget->isReadOnly()) {
+                widget->setReadOnly(false);
+            }
+        }
+    }
+}
 
 } // namespace Sudoku
 
