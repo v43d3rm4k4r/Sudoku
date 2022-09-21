@@ -10,9 +10,7 @@ int main(int argc, char* argv[]) {
     QApplication app(argc, argv);
     app.setApplicationVersion(QString::number(SUDOKU_APP_VERSION));
     app.setApplicationDisplayName(QObject::tr("Sudoku") + " v" + QString::number(SUDOKU_APP_VERSION));
-    //app.setWindowIcon(QIcon(":/icons/window_icon@256.ico"));
-    //app.setWindowIcon(QIcon(":/icons/window_icon@256.ico"));
-    app.setWindowIcon(QIcon(":/icons/window_icon@256.ico"));
+    app.setWindowIcon(QIcon(":icons/window_icon@256.icoo"));
 
     // TODO: make mainStylesheet.css
 //    app.setStyleSheet("QLineEdit { background-color: yellow }");

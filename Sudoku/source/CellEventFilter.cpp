@@ -8,7 +8,7 @@ namespace Sudoku {
 
 CellEventFilter::CellEventFilter(QObject* targetObject) : _targetObject{targetObject} {
     _propertyAnimation = new QPropertyAnimation(targetObject, "geometry");
-    _propertyAnimation->setDuration(100);
+    _propertyAnimation->setDuration(75);
     _propertyAnimation->setEasingCurve(QEasingCurve::Linear);
 }
 
