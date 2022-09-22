@@ -26,7 +26,6 @@ MainWindow::MainWindow(QWidget* parent) : QMainWindow{parent} {
 
     setFixedSize(minimumWidth(), minimumHeight());
 
-    // TODO _initAnimations
     _initAnimations();
 
     _displayField();

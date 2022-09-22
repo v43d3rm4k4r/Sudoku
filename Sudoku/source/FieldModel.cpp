@@ -1,13 +1,14 @@
 #include <FieldModel.h>
 #include <QRandomGenerator>
+
 #ifdef DEBUG
 #   include <iostream>
 #endif
 
 #if defined (__linux__) && defined (__GNUC__)
-#define FUNC __PRETTY_FUNCTION__
+#   define FUNC __PRETTY_FUNCTION__
 #elif defined _WIN32
-#define FUNC __func__
+#   define FUNC __func__
 #endif
 
 namespace Sudoku {
@@ -73,7 +74,6 @@ void FieldModel::_shuffle() {
         shuffleMethods.remove(methodNum, 1);
     }
 
-    // TODO: randomly call shuffle methods
     debugShowField(FUNC);
 }
 
